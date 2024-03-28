@@ -1,9 +1,7 @@
 <?php
-
-$hostname = "localhost"; // Change this to your database hostname
-$username = "root"; // Change this to your database username
-$password = ""; // Change this to your database password
-$database = "moj-freediving-log"; // Change this to your database name
+include "inc/db.php";
+include "inc/header.php";
+include "inc/nav.php";
 
 try {
     // Create connection
@@ -51,33 +49,8 @@ try {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a Dive - Freediving Training Log</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100">
-
-    <!-- Navigation Bar -->
-    <div class="flex min-h-screen">
-
-        <!-- Sidebar -->
-        <div class="bg-gray-800 text-white w-64 flex-shrink-0">
-            <div class="p-4">
-                <h1 class="text-2xl font-semibold">Freediving Log</h1>
-                <!-- Tabs -->
-                <ul class="mt-6">
-                    <li><a href="add-dive.php" class="block py-2 px-4 text-sm hover:bg-gray-700">Add a Dive</a></li>
-                    <!-- Add other tabs here -->
-                </ul>
-            </div>
-        </div>
-
         <!-- Main Content -->
-        <div class="flex-1 p-8">
+        <div class="flex-1 p-8 overflow-y-auto"">
             <h2 class="text-3xl font-semibold mb-4">Add a Dive</h2>
 
             <!-- Dive Form -->
@@ -157,12 +130,4 @@ try {
                 </form>
             </div>
 
-            <!-- Dive Chart -->
-            <div class="mt-8 bg-white p-4 rounded-lg shadow-md">
-                <!-- Include your dive chart here -->
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+<?php include "inc/footer.php"; ?>
